@@ -14,3 +14,4 @@ redis
 PyPDF2
 pydantic
 requests
+PyMuPDF
