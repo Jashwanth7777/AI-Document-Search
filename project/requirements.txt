@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+python-jose[cryptography]
+passlib[bcrypt]
+python-dotenv
+email-validator
+python-multipart
+sentence-transformers
+faiss-cpu
+celery
+redis
+PyPDF2
+pydantic
+requests

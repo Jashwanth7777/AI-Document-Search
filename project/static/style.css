@@ -1,0 +1,239 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 650px;
+  margin: 3em auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px #0002;
+  padding: 2.5em 2em 2em 2em;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+h1 {
+  text-align: center;
+  color: #2a4365;
+  letter-spacing: 2px;
+  margin-bottom: 1.5em;
+}
+
+.section {
+  margin-bottom: 2.5em;
+}
+
+label {
+  font-weight: 600;
+  color: #2a4365;
+}
+
+input[type="file"], input[type="text"], input[type="password"], input[type="email"] {
+  width: 100%;
+  padding: 0.7em;
+  margin-top: 0.5em;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1em;
+  margin-bottom: 0.7em;
+  background: #f8fafc;
+  transition: border 0.2s;
+}
+
+input:focus {
+  border: 1.5px solid #2b6cb0;
+  outline: none;
+}
+
+button {
+  padding: 0.6em 2em;
+  background: linear-gradient(90deg, #2b6cb0 60%, #4299e1 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1em;
+  font-size: 1em;
+  font-weight: 600;
+  box-shadow: 0 2px 8px #0001;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background: #b2b2b2;
+  cursor: not-allowed;
+}
+
+#uploadMsg, #results, #searchMsg, #loginMsg, #registerMsg {
+  margin-top: 1em;
+  font-size: 1em;
+}
+
+.result-block {
+  background: #f0f4f8;
+  border-radius: 8px;
+  padding: 1.2em;
+  margin-bottom: 1.2em;
+  box-shadow: 0 1px 4px #0001;
+  transition: box-shadow 0.2s;
+  border-left: 4px solid #2b6cb0;
+  animation: fadeIn 0.7s;
+}
+
+.result-block:hover {
+  box-shadow: 0 4px 16px #2b6cb033;
+}
+
+.loading {
+  color: #2b6cb0;
+  font-style: italic;
+}
+
+.nav {
+  text-align: right;
+  margin-bottom: 1.5em;
+}
+
+.nav button {
+  background: #e2e8f0;
+  color: #2a4365;
+  margin-left: 0.5em;
+  border-radius: 20px;
+  padding: 0.4em 1.2em;
+  font-size: 0.98em;
+  box-shadow: none;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav button.active, .nav button:hover {
+  background: #2b6cb0;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .container { padding: 1em; }
+  h1 { font-size: 1.5em; }
+}
+
+.result-block pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+  font-family: inherit;
+  font-size: 1em;
+  color: #22223b;
+  background: none;
+  padding: 0;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background: linear-gradient(120deg, #232526 0%, #414345 100%);
+  color: #e0eafc;
+}
+
+body.dark-mode .container {
+  background: #232946;
+  box-shadow: 0 8px 32px #0005;
+}
+
+body.dark-mode h1,
+body.dark-mode label,
+body.dark-mode .nav button {
+  color: #e0eafc;
+}
+
+body.dark-mode .section {
+  color: #e0eafc;
+}
+
+body.dark-mode input,
+body.dark-mode input[type="file"] {
+  background: #232946;
+  color: #e0eafc;
+  border: 1px solid #4f5d75;
+}
+
+body.dark-mode .result-block {
+  background: #353b48;
+  color: #e0eafc;
+  border-left: 4px solid #4299e1;
+}
+
+body.dark-mode .nav button {
+  background: #353b48;
+  color: #e0eafc;
+}
+
+body.dark-mode .nav button.active,
+body.dark-mode .nav button:hover {
+  background: #4299e1;
+  color: #fff;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 6px solid #2b6cb0;
+  border-color: #2b6cb0 transparent #4299e1 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+body.dark-mode #spinner {
+  background: rgba(30,32,40,0.7);
+}
+body.dark-mode .lds-dual-ring:after {
+  border: 6px solid #4299e1;
+  border-color: #4299e1 transparent #2b6cb0 transparent;
+}
+
+mark {
+  background: #ffe066;
+  color: #22223b;
+  padding: 0 2px;
+  border-radius: 3px;
+}
+body.dark-mode mark {
+  background: #ffe066;
+  color: #232946;
+}
+
+body.dark-mode .result-block pre {
+  color: #e0eafc;
+}
+
+.page-fade {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+.page-fade.active {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.4s;
+}
